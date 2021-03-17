@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_general_ci">db_pembayaran</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="tbl_mahasiswa" view="colnames">
+<left>127</left>
+<top>133</top>
+<width>125</width>
+<height>197</height>
+<sql_create_table>CREATE TABLE `tbl_mahasiswa` (
+  `npm` char(9) NOT NULL,
+  `nama` varchar(40) NOT NULL,
+  `jurusan` varchar(20) NOT NULL default '',
+  `tgl_lahir` date NOT NULL,
+  `jenis_kelamin` varchar(10) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `agama` varchar(10) NOT NULL,
+  PRIMARY KEY  (`npm`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC</sql_create_table>
+</table>
+<table name="tbl_pembayaran" view="colnames">
+<left>374</left>
+<top>64</top>
+<width>152</width>
+<height>265</height>
+<sql_create_table>CREATE TABLE `tbl_pembayaran` (
+  `no_transaksi` char(10) NOT NULL,
+  `npm` char(9) NOT NULL,
+  `tgl_pembayaran` date default NULL,
+  `jenis_pembayaran` varchar(50) default NULL,
+  `b_pendaftaran` decimal(10,0) default NULL,
+  `b_produksi` decimal(10,0) default NULL,
+  `b_pembangunan` decimal(10,0) default NULL,
+  `bpp_semester` decimal(10,0) default NULL,
+  `sks` decimal(10,0) default NULL,
+  `lain_lain` decimal(10,0) default NULL,
+  `keterangan` varchar(15) default NULL,
+  PRIMARY KEY  (`no_transaksi`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
